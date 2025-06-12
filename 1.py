@@ -88,7 +88,6 @@ def is_valid_filename(filename):
         print("Имя файла не может быть пустым.")
         return False
 
-    # Проверка на запрещённые символы (зависит от ОС, здесь пример для Windows)
     if re.search(r'[<>:"/\|?*]', filename):
         print("Имя файла содержит запрещённые символы.")
         return False
