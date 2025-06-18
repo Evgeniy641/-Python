@@ -1,7 +1,6 @@
 import os
 import re
 
-
 class Node:
     def __init__(self, value=None):
         self.value = value
@@ -24,7 +23,7 @@ class NumberRing:
                 prev.next = node
             prev = node
         if prev:
-            prev.next = self.head  
+            prev.next = self.head  # замыкаем кольцо
 
     def get_sequence(self, start, length):
         if length <= 0 or length > self.n:
@@ -90,13 +89,13 @@ class NumberRing:
                         continue
 
                     try:
-                        a_num = int(a)
-                        b_num = int(b)
-                        c_num = int(c)
+                        a_num = a
+                        b_num = b
+                        c_num = c
                     except:
                         continue
 
-                    if a_num + b_num == c_num:
+                    if a_num + b_num == c_num and (len(a) + len(b) + len(c)) == self.n:
                         return f"{a_num}+{b_num}={c_num}"
         return "No"
 
