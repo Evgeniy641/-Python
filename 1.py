@@ -1,6 +1,7 @@
 import os
 import re
 
+
 class Node:
     def __init__(self, value=None):
         self.value = value
